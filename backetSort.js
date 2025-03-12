@@ -1,4 +1,12 @@
 
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i++) {
+    list[i] = Math.random() * n; // Generar números entre 0 y n
+  }
+  return list; // Retornar la lista generada
+}
+
 function insertionSort(bucket) {
   for (let i = 1; i < bucket.length; ++i) {
     let key = bucket[i];
@@ -12,21 +20,23 @@ function insertionSort(bucket) {
 }
 
 function bucketSort(arr) {
+  if (arr.length === 0) return; // Manejar caso de arreglo vacío
+
   let n = arr.length;
   let buckets = Array.from({ length: n }, () => []);
 
-  // Put array elements in different buckets
+  // Colocar los elementos en diferentes buckets
   for (let i = 0; i < n; i++) {
-    let bi = Math.floor(n * arr[i]);
+    let bi = Math.min(Math.floor((arr[i] / n) * n), n - 1); // Asegurar índice válido
     buckets[bi].push(arr[i]);
   }
 
-  // Sort individual buckets using insertion sort
+  // Ordenar buckets individuales usando insertion sort
   for (let i = 0; i < n; i++) {
     insertionSort(buckets[i]);
   }
 
-  // Concatenate all buckets into arr[]
+  // Concatenar todos los buckets en arr[]
   let index = 0;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < buckets[i].length; j++) {
@@ -35,19 +45,19 @@ function bucketSort(arr) {
   }
 }
 
-// Driver code
-let arr = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434];
+// Código principal
+let arr = createList(10000000); // Crear lista con 9 elementos
 
-// Measure execution time
-console.log("Original array:");
+// Medir tiempo de ejecución
+console.log("Array original:");
 console.log(arr.join(" "));
 
-const start = performance.now(); // Start timing
+const start = performance.now(); // Iniciar cronómetro
 bucketSort(arr);
-const end = performance.now(); // End timing
+const end = performance.now(); // Detener cronómetro
 
-console.log("Sorted array is:");
+console.log("Array ordenado:");
 console.log(arr.join(" "));
 
-// Display execution time
+// Mostrar tiempo de ejecución
 console.log(`El tiempo de ejecución fue: ${(end - start).toFixed(4)} ms`);

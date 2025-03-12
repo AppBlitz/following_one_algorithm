@@ -61,7 +61,13 @@ function printArray(arr) {
 }
 
 // Driver method
-const a = [3, 7, 4, 8, 6, 2, 1, 5];
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i = i + 1)
+    list[i] = Math.random() * n;
+  return list;
+}
+const a = createList(100000);
 const up = 1;
 
 console.log("Original array:");
