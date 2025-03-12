@@ -80,24 +80,26 @@ function timSort(arr, n) {
   }
 }
 
-function printArray(arr, n) {
-  for (let i = 0; i < n; i++) {
-    globalThis.console.log(arr[i] + " ");
-  }
-}
 
-let arr = [-2, 7, 15, -14, 0, 15, 0, 7, -7, -4, -13, 5, 8, -14, 12];
-let n = arr.length;
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i += 1) {
+    let number = Math.random() * n;
+    list[i] = Math.floor(number);
+  }
+  return list;
+}
+let arr = createList(50);
 
 globalThis.console.log("Given Array is \n");
-printArray(arr, n);
+console.log(arr.join());
 
 const start = performance.now(); // Inicio de la medición del tiempo
-timSort(arr, n);
+timSort(arr, arr.length);
 const end = performance.now(); // Fin de la medición del tiempo
 
 globalThis.console.log("After Sorting Array is \n");
-printArray(arr, n);
+console.log(arr.join())
 
 // Mostrar el tiempo de ejecución
 globalThis.console.log(

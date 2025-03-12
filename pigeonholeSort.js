@@ -1,4 +1,3 @@
-
 // Pigeonhole Sort in JavaScript
 function pigeonholeSort(arr) {
   let n = arr.length;
@@ -27,9 +26,16 @@ function pigeonholeSort(arr) {
     }
   }
 }
-
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i = i + 1) {
+    let number = Math.random() * n;
+    list[i] = Math.floor(number);
+  }
+  return list;
+}
 // Driver code
-let arr = [8, 3, 2, 7, 4, 6, 8];
+let arr = createList(10);
 console.log("Original array: ", arr);
 
 // Measure execution time

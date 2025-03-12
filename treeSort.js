@@ -51,7 +51,15 @@ function treeins(arr) {
 
 // Driver Code
 
-let arr = [5, 4, 7, 2, 11];
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i += 1) {
+    let number = Math.random() * n;
+    list[i] = Math.floor(number);
+  }
+  return list;
+}
+let arr = createList(10);
 console.log("Original array: " + arr);
 
 // Measure execution time
@@ -60,7 +68,8 @@ treeins(arr);
 const end = performance.now(); // End timing
 
 console.log("Sorted array: ");
-inorderRec(root);
+console.log(arr.join());
+// inorderRec(root);
 
 // Display execution time
 console.log(`El tiempo de ejecución fue: ${(end - start).toFixed(4)} ms`);

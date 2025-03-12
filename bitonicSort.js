@@ -1,4 +1,3 @@
-
 /* JavaScript program for Bitonic Sort.
 Note: This program works only when the size of input is a power of 2. */
 
@@ -63,8 +62,10 @@ function printArray(arr) {
 // Driver method
 function createList(n) {
   let list = [];
-  for (let i = 0; i < n; i = i + 1)
-    list[i] = Math.random() * n;
+  for (let i = 0; i < n; i = i + 1) {
+    let number = Math.random() + n;
+    list[i] = Math.floor(number);
+  }
   return list;
 }
 const a = createList(100000);

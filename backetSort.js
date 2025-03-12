@@ -2,7 +2,8 @@
 function createList(n) {
   let list = [];
   for (let i = 0; i < n; i++) {
-    list[i] = Math.random() * n; // Generar números entre 0 y n
+    let number = Math.random() * n;
+    list[i] = Math.floor((number));
   }
   return list; // Retornar la lista generada
 }

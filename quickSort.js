@@ -18,9 +18,16 @@ function quickSort(arr) {
 
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
-
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i += 1) {
+    let number = Math.random() * n;
+    list[i] = Math.floor(number);
+  }
+  return list;
+}
 // Driver code
-const arr = [10, 7, 8, 9, 1, 5];
+const arr = createList(10);
 
 console.log("Original array:");
 console.log(arr.join(" "));

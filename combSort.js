@@ -44,15 +44,22 @@ function sort(arr) {
   }
 }
 
-let arr = [8, 4, 1, 56, 3, -44, 23, -6, 28, 0];
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i = i + 1) {
+    let number = Math.random() * n;
+    list[i] = Math.floor(number);
+  }
+  return list;
+}
+let arr = createList(10);
+console.log(arr.join(" "))
 
 // Measure execution time
 const start = performance.now(); // Start timing
 sort(arr);
 const end = performance.now(); // End timing
 
-console.log("sorted array");
-for (let i = 0; i < arr.length; ++i) console.log(arr[i] + " ");
 
 // Display execution time
 console.log(`El tiempo de ejecución fue: ${(end - start).toFixed(4)} ms`);

@@ -60,8 +60,16 @@ function printArray(arr) {
   console.log();
 }
 
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i = i + 1) {
+    let number = Math.random() * n;
+    list[i] = Math.floor((number));
+  }
+  return list;
+}
 // Driver's code
-let arr = [9, 4, 3, 8, 10, 2, 5];
+let arr = createList(10);
 console.log("Original array is:");
 printArray(arr);
 

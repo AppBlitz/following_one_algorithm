@@ -25,8 +25,16 @@ function selectionSort(arr) {
   }
 }
 
+function createList(n) {
+  let list = [];
+  for (let i = 0; i < n; i += 1) {
+    let number = Math.random() * n;
+    list[i] = Math.floor(number);
+  }
+  return list;
+}
 // Input array
-const arr = [64, 25, 12, 22, 11];
+const arr = createList(20);
 
 // Display input array
 console.log("Original array: " + arr);
