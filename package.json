@@ -8,7 +8,11 @@
     "method_one": "node timSort.js",
     "method_two": "node combSort.js",
     "method_three": "node selectionSort.js",
-    "method_four": "node treeSort.js"
+    "method_four": "node treeSort.js",
+    "method_five": "node pigeonholeSort.js",
+    "method_six": "node backetSort.js",
+    "method_seven": "node quickSort.js",
+    "method_eight": "node heapSort.js"
   },
   "keywords": [],
   "author": "",
