@@ -1,0 +1,16 @@
+{
+  "name": "seguimiento_one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "method_one": "node timSort.js",
+    "method_two": "node combSort.js",
+    "method_three": "node selectionSort.js",
+    "method_four": "node treeSort.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
